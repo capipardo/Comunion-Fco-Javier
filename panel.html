@@ -721,7 +721,7 @@ async function loadStats() {
   const totalPersonas =
     confirmados.reduce(
       (total, invitado) =>
-        total + (Number(invitado.asistentes) || 0),
+        total + (Number(invitado.numero_asistentes) || 0),
       0
     );
 
@@ -830,7 +830,7 @@ async function loadStats() {
   card.innerHTML = `
   <img
     src="${signedData.signedUrl}"
-    alt="${foto.nombre_archivo || "Foto del evento"}"
+    alt="${foto.nombre|| "Foto del evento"}"
   >
 
   <div class="photo-info">
@@ -854,7 +854,7 @@ async function loadStats() {
         type="button"
         class="photo-button delete-button"
         data-id="${foto.id}"
-        data-path="${foto.ruta_storage}"
+        data-path="${foto.ruta}"
       >
         Eliminar
       </button>
