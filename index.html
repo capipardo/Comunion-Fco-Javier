@@ -1852,9 +1852,9 @@ photoInput.addEventListener("change", async () => {
         await supabaseClient
           .from("fotos")
           .insert({
-            nombre_archivo: file.name,
-            ruta_storage: storagePath
-          });
+  nombre: file.name,
+  ruta: storagePath
+});
 
       if (dbError) {
         throw dbError;
