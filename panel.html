@@ -709,12 +709,12 @@ async function loadStats() {
 
   const confirmados =
     invitados.filter(
-      invitado => invitado.asistencia === "si"
+      invitado => invitado.numero_asistentes=== "si"
     );
 
   const noAsisten =
     invitados.filter(
-      invitado => invitado.asistencia === "no"
+      invitado => invitado.numero_asistentes === "no"
     );
 
 
@@ -958,7 +958,7 @@ function renderGuests(invitados) {
   tableBody.innerHTML = invitados.map(invitado => {
 
     const asistencia =
-      invitado.asistencia === "si"
+      invitado.numero_asistentes=== "si"
         ? `<span class="status-yes">Sí</span>`
         : `<span class="status-no">No</span>`;
 
