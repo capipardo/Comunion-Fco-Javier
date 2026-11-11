@@ -809,7 +809,7 @@ async function loadStats() {
       await supabaseClient.storage
         .from("recuerdos")
         .createSignedUrl(
-          foto.ruta_storage,
+          foto.ruta,
           3600
         );
 
@@ -836,14 +836,14 @@ async function loadStats() {
   <div class="photo-info">
 
     <div class="photo-name">
-      ${foto.nombre_archivo || "Fotografía"}
+      ${foto.nombre || "Fotografía"}
     </div>
 
     <div class="photo-actions">
 
       <a
         href="${signedData.signedUrl}"
-        download="${foto.nombre_archivo || "foto"}"
+        download="${foto.nombre || "foto"}"
         class="photo-button download-button"
         target="_blank"
       >
@@ -887,7 +887,7 @@ deleteButton.addEventListener(
     const { error: storageError } =
       await supabaseClient.storage
         .from("recuerdos")
-        .remove([foto.ruta_storage]);
+        .remove([foto.ruta]);
 
     if (storageError) {
 
@@ -979,7 +979,7 @@ function renderGuests(invitados) {
         <td>${asistencia}</td>
 
         <td>
-          ${invitado.asistentes ?? "-"}
+          ${invitado.numero_asistentes ?? "-"}
         </td>
 
         <td>
@@ -1112,7 +1112,7 @@ document
         "Telefono",
         "Email",
         "Asistencia",
-        "Asistentes",
+        "numero_asistentes",
         "Alergias",
         "Transporte",
         "Acompanantes",
@@ -1125,7 +1125,7 @@ document
         invitado.telefono || "",
         invitado.email || "",
         invitado.asistencia || "",
-        invitado.asistentes ?? "",
+        invitado.numero_asistentes?? "",
         invitado.alergias || "",
         invitado.transporte || "",
         invitado.acompanantes || "",
