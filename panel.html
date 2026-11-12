@@ -709,7 +709,7 @@ async function loadStats() {
 
   const confirmados =
     invitados.filter(
-      invitado => invitado.numero_asistentes=== "si"
+     ${invitado.numero_asistentes ?? "-"}
     );
 
   const noAsisten =
