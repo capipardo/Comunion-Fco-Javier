@@ -707,23 +707,23 @@ async function loadStats() {
   }
 
 
-  const confirmados =
-    invitados.filter(
-     ${invitado.numero_asistentes ?? "-"}
-    );
+ const confirmados =
+  invitados.filter(
+    invitado => invitado.asistencia === "Sí"
+  );
 
-  const noAsisten =
-    invitados.filter(
-      invitado => invitado.numero_asistentes === "no"
-    );
+const noAsisten =
+  invitados.filter(
+    invitado => invitado.asistencia === "No"
+  );
 
-
-  const totalPersonas =
+const totalPersonas =
   confirmados.reduce(
     (total, invitado) =>
       total + (Number(invitado.numero_asistentes) || 0),
     0
   );
+
 
 
   const {
