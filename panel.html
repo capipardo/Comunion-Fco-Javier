@@ -688,23 +688,20 @@ applyGuestFilters();
 }
 async function loadStats() {
 
-  const {
-    data: invitados,
-    error: invitadosError
-  } = await supabaseClient
-    .from("invitados")
-    .select("*");
+ const {
+  data: invitados,
+  error: invitadosError
+} = await supabaseClient
+  .from("invitados")
+  .select("*");
 
-
-  if (invitadosError) {
-
-    console.error(
-      "Error cargando invitados:",
-      invitadosError
-    );
-
-    return;
-  }
+if (invitadosError) {
+  console.error(
+    "Error cargando invitados:",
+    invitadosError
+  );
+  return;
+}
 
 
  const confirmados =
