@@ -959,7 +959,7 @@ function renderGuests(invitados) {
   tableBody.innerHTML = invitados.map(invitado => {
 
     const asistencia =
-      invitado.numero_asistentes=== "si"
+      invitado.asistencia=== "si"
         ? `<span class="status-yes">Sí</span>`
         : `<span class="status-no">No</span>`;
 
