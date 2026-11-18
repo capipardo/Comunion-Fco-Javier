@@ -706,14 +706,17 @@ async function loadStats() {
   }
 
   const confirmados =
-    invitados.filter(
-      invitado => invitado.asistencia === "Sí"
-    );
+  invitados.filter(
+    invitado =>
+      String(invitado.asistencia).toLowerCase() === "si" ||
+      String(invitado.asistencia).toLowerCase() === "sí"
+  );
 
-  const noAsisten =
-    invitados.filter(
-      invitado => invitado.asistencia === "No"
-    );
+const noAsisten =
+  invitados.filter(
+    invitado =>
+      String(invitado.asistencia).toLowerCase() === "no"
+  );
 console.log("CONFIRMADOS:", confirmados);
 const totalPersonas =
   confirmados.reduce(
