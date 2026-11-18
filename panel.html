@@ -712,7 +712,7 @@ async function loadStats() {
     invitados.filter(
       invitado => invitado.asistencia === "No"
     );
-
+console.log("CONFIRMADOS:", confirmados);
 const totalPersonas =
   confirmados.reduce(
     (total, invitado) =>
