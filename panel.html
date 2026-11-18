@@ -667,6 +667,8 @@ async function loadGuests() {
     `;
 
     return;
+    allGuests = data || [];
+renderGuests(allGuests);
   }
 
   if (!invitados.length) {
