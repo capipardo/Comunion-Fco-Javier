@@ -688,32 +688,30 @@ applyGuestFilters();
 }
 async function loadStats() {
 
- const {
-  data: invitados,
-  error: invitadosError
-} = await supabaseClient
-  .from("invitados")
-  .select("*");
+  const {
+    data: invitados,
+    error: invitadosError
+  } = await supabaseClient
+    .from("invitados")
+    .select("*");
 
-if (invitadosError) {
-  console.error(
-    "Error cargando invitados:",
-    invitadosError
-  );
-  return;
-}
+  if (invitadosError) {
+    console.error(
+      "Error cargando invitados:",
+      invitadosError
+    );
+    return;
+  }
 
+  const confirmados =
+    invitados.filter(
+      invitado => invitado.asistencia === "Sí"
+    );
 
- const confirmados =
-   const asiste = invitado.asistencia === "Sí";
-  invitados.filter(
-   
-  );
-
-const noAsisten =
-  invitados.filter(
-    invitado => invitado.asistencia === "No"
-  );
+  const noAsisten =
+    invitados.filter(
+      invitado => invitado.asistencia === "No"
+    );
 
 const totalPersonas =
   confirmados.reduce(
