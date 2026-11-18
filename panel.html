@@ -736,7 +736,17 @@ const totalPersonas =
       count: "exact",
       head: true
     });
+document.getElementById("confirmados").textContent =
+  confirmados.length;
 
+document.getElementById("noAsisten").textContent =
+  noAsisten.length;
+
+document.getElementById("totalPersonas").textContent =
+  totalPersonas;
+
+document.getElementById("totalFotos").textContent =
+  totalFotos || 0;
 
   if (fotosError) {
 
