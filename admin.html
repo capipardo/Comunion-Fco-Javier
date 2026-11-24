@@ -303,8 +303,9 @@ const SUPABASE_KEY = "sb_publishable_EnQWhpZV0LG4N4ap-yoh7w_rrXaXSfE";
           loginButton.disabled = false;
           loginButton.textContent = "Entrar al panel";
 const forgotPasswordButton =
-  document.getElementById("forgotPassword");
 
+  document.getElementById("forgotPassword");
+console.log("Botón recuperación:", forgotPasswordButton);
 forgotPasswordButton.addEventListener("click", async () => {
   const email = document.getElementById("email").value.trim();
 
