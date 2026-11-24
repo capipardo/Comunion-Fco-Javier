@@ -736,16 +736,16 @@ const totalPersonas =
       count: "exact",
       head: true
     });
-document.getElementById("confirmados").textContent =
+document.getElementById("confirmedCount").textContent =
   confirmados.length;
 
-document.getElementById("noAsisten").textContent =
+document.getElementById("declinedCount").textContent =
   noAsisten.length;
 
-document.getElementById("totalPersonas").textContent =
+document.getElementById("attendeesCount").textContent =
   totalPersonas;
 
-document.getElementById("totalFotos").textContent =
+document.getElementById("photosCount").textContent =
   totalFotos || 0;
 
   if (fotosError) {
