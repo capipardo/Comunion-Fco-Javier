@@ -225,7 +225,9 @@
       >
         Entrar al panel
       </button>
-
+<button type="button" id="forgotPassword">
+  ¿Has olvidado tu contraseña?
+</button>
       <p
         id="loginMessage"
         class="login-message"
@@ -300,7 +302,31 @@ const SUPABASE_KEY = "sb_publishable_EnQWhpZV0LG4N4ap-yoh7w_rrXaXSfE";
 
           loginButton.disabled = false;
           loginButton.textContent = "Entrar al panel";
+const forgotPasswordButton =
+  document.getElementById("forgotPassword");
 
+forgotPasswordButton.addEventListener("click", async () => {
+  const email = document.getElementById("email").value.trim();
+
+  if (!email) {
+    alert("Introduce primero tu correo electrónico.");
+    return;
+  }
+
+  const { error } =
+    await supabaseClient.auth.resetPasswordForEmail(email, {
+      redirectTo:
+        "https://capipardo.github.io/Comunion-Fco-Javier/reset-password.html"
+    });
+
+  if (error) {
+    console.error("Error enviando recuperación:", error);
+    alert("No se pudo enviar el correo de recuperación.");
+    return;
+  }
+
+  alert("Te hemos enviado un correo para cambiar tu contraseña.");
+});
           return;
         }
 
