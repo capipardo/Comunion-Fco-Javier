@@ -302,12 +302,23 @@ const SUPABASE_KEY = "sb_publishable_EnQWhpZV0LG4N4ap-yoh7w_rrXaXSfE";
 
           loginButton.disabled = false;
           loginButton.textContent = "Entrar al panel";
-const forgotPasswordButton =
 
+          return;
+        }
+
+
+        window.location.href =
+          "panel.html";
+
+      }
+    );
+const forgotPasswordButton =
   document.getElementById("forgotPassword");
-console.log("Botón recuperación:", forgotPasswordButton);
+
 forgotPasswordButton.addEventListener("click", async () => {
-  const email = document.getElementById("email").value.trim();
+
+  const email =
+    document.getElementById("adminEmail").value.trim();
 
   if (!email) {
     alert("Introduce primero tu correo electrónico.");
@@ -326,18 +337,9 @@ forgotPasswordButton.addEventListener("click", async () => {
     return;
   }
 
-  alert("Te hemos enviado un correo para cambiar tu contraseña.");
+  alert("Si el correo está registrado, recibirás un enlace para cambiar tu contraseña.");
+
 });
-          return;
-        }
-
-
-        window.location.href =
-          "panel.html";
-
-      }
-    );
-
   </script>
 
 </body>
